@@ -22,7 +22,7 @@ import android.widget.ToggleButton;
 public class FlashLightActivity extends Activity implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "FlashLightActivity";
     private static final String LONG_PRESS = "long_press";
-    public static final String WHITE = "white";
+    public static final String BLUE = "blue";
     private final Flash flash = new Flash();
     private View background;
     private ToggleButton theButton;
@@ -45,10 +45,10 @@ public class FlashLightActivity extends Activity implements SharedPreferences.On
         }
     }
 
-    public class WhiteTask extends AsyncTask<Void, Void, Boolean> {
+    public class BlueTask extends AsyncTask<Void, Void, Boolean> {
         @Override
         protected Boolean doInBackground(Void... params) {
-            return sharedPreferences.getBoolean(WHITE, false);
+            return sharedPreferences.getBoolean(BLUE, false);
         }
 
         @Override
@@ -108,8 +108,8 @@ public class FlashLightActivity extends Activity implements SharedPreferences.On
             case LONG_PRESS:
                 new PressTask().execute();
                 break;
-            case WHITE:
-                new WhiteTask().execute();
+            case BLUE:
+                new BlueTask().execute();
                 break;
         }
     }
@@ -149,7 +149,7 @@ public class FlashLightActivity extends Activity implements SharedPreferences.On
         }
 
         new PressTask().execute();
-        new WhiteTask().execute();
+        new BlueTask().execute();
     }
 
     @Override
