@@ -93,7 +93,7 @@ public class FlashLightActivity extends Activity implements SharedPreferences.On
         }
 
         ImageSpan imageSpan = new ImageSpan(this, R.drawable.power_symbol);
-        SpannableString content = new SpannableString("X");
+        SpannableString content = new SpannableString("fuck");
         content.setSpan(imageSpan, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         theButton.setText(content);
